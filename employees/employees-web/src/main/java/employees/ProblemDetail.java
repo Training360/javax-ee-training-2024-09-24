@@ -3,6 +3,8 @@ package employees;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.Set;
+
 @Data
 @Builder
 public class ProblemDetail {
@@ -12,4 +14,6 @@ public class ProblemDetail {
     private String title;
 
     private String detail;
+
+    private Set<Violation> violations;
 }

@@ -1,6 +1,7 @@
 package employees;
 
 import jakarta.inject.Inject;
+import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -29,7 +30,7 @@ public class EmployeeResource {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response create(EmployeeDto employee) {
+    public Response create(@Valid EmployeeDto employee) {
         var result = employeesService.create(employee);
         return Response.status(Response.Status.CREATED).entity(result).build();
     }
