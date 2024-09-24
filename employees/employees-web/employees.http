@@ -23,6 +23,14 @@ Content-Type: application/json
   "name": ""
 }
 
+### Lowercased name
+POST http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
+Content-Type: application/json
+
+{
+  "name": "john doe"
+}
+
 ### Update employee
 PUT http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/1
 Content-Type: application/json
