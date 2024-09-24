@@ -1,0 +1,2 @@
+### List employees
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees

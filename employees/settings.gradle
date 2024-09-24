@@ -1,0 +1,3 @@
+rootProject.name = 'employees'
+include 'employees-web'
+

@@ -1,0 +1,5 @@
+[versions]
+jakarta-jakartaee-api = "10.0.0"
+
+[libraries]
+jakarta-jakartaee-api = {module = "jakarta.platform:jakarta.jakartaee-api", version.ref = "jakarta-jakartaee-api"}
