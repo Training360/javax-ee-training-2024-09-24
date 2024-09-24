@@ -7,6 +7,10 @@ repositories {
 
 dependencies {
     compileOnly libs.jakarta.jakartaee.api
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+    compileOnly libs.mapstruct
+    annotationProcessor libs.mapstruct.processor
 }
 
 testing {

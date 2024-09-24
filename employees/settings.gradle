@@ -1,3 +1,4 @@
 rootProject.name = 'employees'
 include 'employees-web'
+include 'employees-backend'
 
