@@ -32,7 +32,7 @@ public class EmployeesDao {
                 .filter(e -> e.getId().equals(id))
                 .findFirst()
                 .orElseThrow(() ->
-                        new IllegalArgumentException("Employee not found with id: " + id));
+                        new NotFoundException("Employee not found with id: " + id));
     }
 
     public Employee create(Employee employee) {
