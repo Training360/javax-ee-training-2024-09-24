@@ -14,3 +14,12 @@ Content-Type: application/json
 {
   "name": "John Doe"
 }
+
+### Update employee
+PUT http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "John Doe"
+}

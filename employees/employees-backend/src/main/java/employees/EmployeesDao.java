@@ -40,4 +40,10 @@ public class EmployeesDao {
         employees.add(employee);
         return employee;
     }
+
+    public Employee update(Employee employee) {
+        var found = findById(employee.getId());
+        found.setName(employee.getName());
+        return found;
+    }
 }

@@ -34,4 +34,16 @@ public class EmployeeResource {
         return Response.status(Response.Status.CREATED).entity(result).build();
     }
 
+    @PUT
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/{id}")
+    public EmployeeDto update(@PathParam("id") long id, EmployeeDto employee) {
+        if (id != employee.id()) {
+            throw new IllegalArgumentException("Id mismatch %d != %d".formatted(id, employee.id()));
+        }
+        return employeesService.update(employee);
+    }
+
+
 }

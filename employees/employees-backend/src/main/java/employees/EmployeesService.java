@@ -29,4 +29,10 @@ public class EmployeesService {
         var result = employeesDao.create(entity);
         return employeeMapper.toEmployeeDto(result);
     }
+
+    public EmployeeDto update(EmployeeDto employee) {
+        var entity = employeeMapper.toEmployee(employee);
+        var result = employeesDao.update(entity);
+        return employeeMapper.toEmployeeDto(result);
+    }
 }
