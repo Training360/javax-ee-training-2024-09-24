@@ -45,5 +45,10 @@ public class EmployeeResource {
         return employeesService.update(employee);
     }
 
-
+    @DELETE
+    @Path("/{id}")
+    public Response delete(@PathParam("id") long id) {
+        employeesService.delete(id);
+        return Response.status(Response.Status.NO_CONTENT).build();
+    }
 }

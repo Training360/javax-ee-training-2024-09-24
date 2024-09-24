@@ -35,4 +35,8 @@ public class EmployeesService {
         var result = employeesDao.update(entity);
         return employeeMapper.toEmployeeDto(result);
     }
+
+    public void delete(long id) {
+        employeesDao.delete(id);
+    }
 }

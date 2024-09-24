@@ -46,4 +46,8 @@ public class EmployeesDao {
         found.setName(employee.getName());
         return found;
     }
+
+    public void delete(long id) {
+        employees.removeIf(e -> e.getId().equals(id));
+    }
 }
