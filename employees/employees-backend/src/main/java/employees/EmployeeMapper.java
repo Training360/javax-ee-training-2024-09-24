@@ -9,4 +9,8 @@ import java.util.List;
 public interface EmployeeMapper {
 
     List<EmployeeDto> toEmployeeDtos(List<Employee> employees);
+
+    EmployeeDto toEmployeeDto(Employee employee);
+
+    Employee toEmployee(EmployeeDto employeeDto);
 }

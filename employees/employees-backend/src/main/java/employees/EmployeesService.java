@@ -18,4 +18,15 @@ public class EmployeesService {
         var employees = employeesDao.findAll();
         return employeeMapper.toEmployeeDtos(employees);
     }
+
+    public EmployeeDto findById(long id) {
+        var employee = employeesDao.findById(id);
+        return employeeMapper.toEmployeeDto(employee);
+    }
+
+    public EmployeeDto create(EmployeeDto employee) {
+        var entity = employeeMapper.toEmployee(employee);
+        var result = employeesDao.create(entity);
+        return employeeMapper.toEmployeeDto(result);
+    }
 }

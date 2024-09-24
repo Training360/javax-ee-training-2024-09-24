@@ -1,2 +1,16 @@
 ### List employees
 GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
+
+### Find employee
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/1
+
+### Not found
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/666
+
+### Create employee
+POST http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
+Content-Type: application/json
+
+{
+  "name": "John Doe"
+}
