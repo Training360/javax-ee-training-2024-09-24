@@ -1,0 +1,5 @@
+rootProject.name = 'employees'
+include 'employees-web'
+include 'employees-backend'
+include 'employees-e2e'
+
