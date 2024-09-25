@@ -28,3 +28,10 @@ data-source add --name=EmployeeDS --jndi-name=java:/jdbc/EmployeeDS \
   --user-name=employees \
   --password=employees
 ```
+
+* Elkezdhető a JPA használata az alkalmazásban
+* `persistence.xml`, ide kell a DataSource hivatkozást betenni
+* Entity: `@Entity`, `@Id`
+* `EntityManager`, `@PersistenceContext`
+* JPA generálhatja a táblákat - csak oktatási céllal
+  * Helyette: Liqubase
