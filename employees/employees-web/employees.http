@@ -1,6 +1,10 @@
 ### List employees
 GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
 
+### List employees with header
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
+RequestId: {{$uuid}}
+
 ### List employees with filter
 GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees?name-prefix=john
 

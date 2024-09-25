@@ -2,12 +2,16 @@ package employees;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Optional;
 
 @ApplicationScoped
 public class EmployeesService {
+
+    private static Logger log = LoggerFactory.getLogger(EmployeesService.class);
 
     @Inject
     private EmployeesDao employeesDao;
@@ -16,6 +20,7 @@ public class EmployeesService {
     private EmployeeMapper employeeMapper;
 
     public List<EmployeeDto> findAll(ListEmployeesFilter listEmployeesFilter) {
+        log.info("Service find all employees");
         var employees = employeesDao.findAll(listEmployeesFilter);
         return employeeMapper.toEmployeeDtos(employees);
     }
