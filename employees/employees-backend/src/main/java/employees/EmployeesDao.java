@@ -5,6 +5,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
 @ApplicationScoped
@@ -30,7 +31,7 @@ public class EmployeesDao {
         return employees
                 .stream()
                 .filter(e -> e.getId().equals(id))
-                .findFirst()
+                .findAny()
                 .orElseThrow(() ->
                         new NotFoundException("Employee not found with id: " + id));
     }
@@ -49,5 +50,12 @@ public class EmployeesDao {
 
     public void delete(long id) {
         employees.removeIf(e -> e.getId().equals(id));
+    }
+
+    public Optional<Employee> findEmployeeByName(String name) {
+        return employees
+                .stream()
+                .filter(e -> e.getName().equals(name))
+                .findAny();
     }
 }

@@ -25,6 +25,10 @@ public class EmployeesService {
     }
 
     public EmployeeDto create(EmployeeDto employee) {
+        employeesDao.findEmployeeByName(employee.name()).ifPresent(
+                e -> {throw new IllegalArgumentException("Employee already exists with id: " + e.getId());}
+        );
+
         var entity = employeeMapper.toEmployee(employee);
         var result = employeesDao.create(entity);
         return employeeMapper.toEmployeeDto(result);
