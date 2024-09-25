@@ -4,6 +4,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
 import java.util.List;
+import java.util.Optional;
 
 @ApplicationScoped
 public class EmployeesService {
@@ -14,8 +15,8 @@ public class EmployeesService {
     @Inject
     private EmployeeMapper employeeMapper;
 
-    public List<EmployeeDto> findAll() {
-        var employees = employeesDao.findAll();
+    public List<EmployeeDto> findAll(ListEmployeesFilter listEmployeesFilter) {
+        var employees = employeesDao.findAll(listEmployeesFilter);
         return employeeMapper.toEmployeeDtos(employees);
     }
 

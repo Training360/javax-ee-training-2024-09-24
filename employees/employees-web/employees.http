@@ -1,6 +1,15 @@
 ### List employees
 GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
 
+### List employees with filter
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees?name-prefix=john
+
+### List employees with maxResult
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees?max-result=1
+
+### List employees with maxResult
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees?name-prefix=john&max-result=0
+
 ### Find employee
 GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/1
 

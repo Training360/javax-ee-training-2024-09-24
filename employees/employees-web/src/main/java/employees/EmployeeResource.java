@@ -7,6 +7,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.util.List;
+import java.util.Optional;
 
 @Path("/employees")
 public class EmployeeResource {
@@ -16,8 +17,9 @@ public class EmployeeResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<EmployeeDto> listEmployees() {
-        return employeesService.findAll();
+    // public List<EmployeeDto> listEmployees(@QueryParam("name-prefix") Optional<String> namePrefix) {
+    public List<EmployeeDto> listEmployees(@BeanParam ListEmployeesFilter employeesFilter) {
+        return employeesService.findAll(employeesFilter);
     }
 
     @GET

@@ -23,8 +23,12 @@ public class EmployeesDao {
                     )
             );
 
-    public List<Employee> findAll() {
-        return employees;
+    public List<Employee> findAll(ListEmployeesFilter listEmployeesFilter) {
+        return employees
+                .stream()
+                .filter(e -> listEmployeesFilter.getNamePrefix().isEmpty() || e.getName().toLowerCase().startsWith(listEmployeesFilter.getNamePrefix().get().toLowerCase()))
+                .limit(listEmployeesFilter.getMaxResult())
+                .toList();
     }
 
     public Employee findById(long id) {

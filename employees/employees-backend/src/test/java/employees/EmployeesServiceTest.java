@@ -33,12 +33,12 @@ class EmployeesServiceTest {
 
     @Test
     void findAll() {
-        when(employeesDao.findAll()).thenReturn(List.of(
+        when(employeesDao.findAll(null)).thenReturn(List.of(
                 new Employee(45L, "John Doe"),
                 new Employee(66L, "Jane Doe")
         ));
 
-        var result = employeesService.findAll();
+        var result = employeesService.findAll(null);
 //        assertEquals(List.of("John Doe", "Jane Doe"),
 //                result.stream().map(EmployeeDto::name).toList());
 
