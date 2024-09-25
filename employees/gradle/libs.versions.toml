@@ -4,6 +4,8 @@ lombok = "1.18.34"
 mapstruct = "1.6.2"
 mockito = "5.13.0"
 assertj = "3.26.3"
+rest-assured = "5.5.0"
+jackson = "2.17.2"
 
 [libraries]
 jakarta-jakartaee-api = {module = "jakarta.platform:jakarta.jakartaee-api", version.ref = "jakarta-jakartaee-api"}
@@ -12,3 +14,5 @@ mapstruct = {module = "org.mapstruct:mapstruct", version.ref = "mapstruct"}
 mapstruct-processor = {module = "org.mapstruct:mapstruct-processor", version.ref = "mapstruct"}
 mockito = {module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito"}
 assertj = {module = "org.assertj:assertj-core", version.ref = "assertj"}
+rest-assured = {module = "io.rest-assured:rest-assured", version.ref = "rest-assured"}
+jackson-databind = {module = " com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson"}

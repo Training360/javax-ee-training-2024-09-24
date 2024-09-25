@@ -12,7 +12,7 @@ POST http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
 Content-Type: application/json
 
 {
-  "name": "John Doe"
+  "name": "John Doe {{$uuid}}"
 }
 
 ### Validation error
