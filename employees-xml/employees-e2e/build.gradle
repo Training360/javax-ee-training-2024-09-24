@@ -1,0 +1,11 @@
+plugins {
+    id 'java'
+}
+
+apply from: rootProject.file('buildSrc/shared.gradle')
+
+dependencies {
+    testImplementation libs.rest.assured
+    testImplementation libs.jackson.databind
+    testImplementation project(":employees-backend")
+}

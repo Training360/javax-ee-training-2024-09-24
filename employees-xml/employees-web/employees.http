@@ -1,0 +1,52 @@
+### List employees
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
+
+### List employees in XML
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
+Accept: application/xml
+
+### Find employee
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/1
+
+### Find employee in XML
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/1
+Accept: application/xml
+
+### Not found
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/666
+
+### Create employee
+POST http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
+Content-Type: application/json
+
+{
+  "name": "John Doe {{$uuid}}"
+}
+
+### Validation error
+POST http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
+Content-Type: application/json
+
+{
+  "name": ""
+}
+
+### Lowercased name
+POST http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
+Content-Type: application/json
+
+{
+  "name": "john doe"
+}
+
+### Update employee
+PUT http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/1
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "John Doe"
+}
+
+### Delete
+DELETE http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/1
