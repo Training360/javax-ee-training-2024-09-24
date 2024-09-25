@@ -35,3 +35,7 @@ data-source add --name=EmployeeDS --jndi-name=java:/jdbc/EmployeeDS \
 * `EntityManager`, `@PersistenceContext`
 * JPA generálhatja a táblákat - csak oktatási céllal
   * Helyette: Liqubase
+
+```sql
+insert into employees(id, emp_name) values (nextval('employees_seq'), 'Jack Doe');
+```

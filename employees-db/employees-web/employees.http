@@ -12,7 +12,7 @@ GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees?name-prefix=j
 GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees?max-result=1
 
 ### List employees with maxResult
-GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees?name-prefix=john&max-result=0
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees?name-prefix=john&max-result=2
 
 ### Find employee
 GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/1
@@ -49,8 +49,8 @@ PUT http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/1
 Content-Type: application/json
 
 {
-  "id": 2,
-  "name": "John Doe"
+  "id": 1,
+  "name": "Jack Doe"
 }
 
 ### Delete
