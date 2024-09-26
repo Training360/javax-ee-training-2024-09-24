@@ -55,6 +55,8 @@ http://localhost:8080/employees-web-1.0-SNAPSHOT/api/openapi-ui
 
 ## Docker
 
+(`gradle build` kell, hogy a WAR fájl létrejöjjön)
+
 * `Dockerfile` létrehozása, tartalom átmásolása
 * `customization` könyvtár átmásolása, benne a két fájllal
 * Build
@@ -63,10 +65,11 @@ http://localhost:8080/employees-web-1.0-SNAPSHOT/api/openapi-ui
 docker build -t employees-db .
 ```
 
-* Futtatás
+* Futtatás (előtte le kell állítani a saját WildFly-t a port miatt)
 
 ```shell
 docker run -d -p 8080:8080 --name my-employees-db employees-db
+docker logs -f my-employees-db
 ```
 
 Ennek eredménye, hogy nem talál adatbázist a Liquibase:
