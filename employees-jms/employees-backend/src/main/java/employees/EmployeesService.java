@@ -21,6 +21,9 @@ public class EmployeesService {
     private LogEntryDao logEntryDao;
 
     @Inject
+    private MessageSender messageSender;
+
+    @Inject
     private EmployeeMapper employeeMapper;
 
     public List<EmployeeDto> findAll(ListEmployeesFilter listEmployeesFilter) {
@@ -41,6 +44,8 @@ public class EmployeesService {
         );
 
         logEntryDao.save(new LogEntry("Create employee: " + employee.name()));
+
+        messageSender.sendMessage("Created employee (JMS): " + employee.name());
 
         var entity = employeeMapper.toEmployee(employee);
         var result = employeesDao.create(entity);

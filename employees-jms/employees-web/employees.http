@@ -25,7 +25,7 @@ GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/1
 GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/666
 
 ### Create employee
-POST http://localhost:8081/employees-web-1.0-SNAPSHOT/api/employees
+POST http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
 Content-Type: application/json
 
 {
