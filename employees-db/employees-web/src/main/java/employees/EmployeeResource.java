@@ -6,6 +6,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
+import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,6 +22,11 @@ public class EmployeeResource {
     @Inject
     private EmployeesService employeesService;
 
+    @Operation(description =
+            // language=markdown
+            """
+            List the all _employees_ based on the filters
+            """, summary = "List employees")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     // public List<EmployeeDto> listEmployees(@QueryParam("name-prefix") Optional<String> namePrefix) {

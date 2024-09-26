@@ -8,7 +8,6 @@ apply from: rootProject.file('buildSrc/shared.gradle')
 
 dependencies {
     implementation project(':employees-backend')
-    implementation libs.openapi.api
     implementation libs.openapi.ui
 }
 

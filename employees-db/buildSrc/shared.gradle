@@ -12,6 +12,7 @@ dependencies {
     compileOnly libs.mapstruct
     annotationProcessor libs.mapstruct.processor
     compileOnly libs.slf4j.api
+    implementation libs.openapi.api
 
     testImplementation libs.mockito
     testImplementation libs.assertj

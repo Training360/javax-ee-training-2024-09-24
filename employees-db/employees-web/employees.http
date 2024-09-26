@@ -1,5 +1,6 @@
 ### Get OpenAPI document
 GET http://localhost:8080/openapi
+#Accept: application/json
 
 ### List employees
 GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
