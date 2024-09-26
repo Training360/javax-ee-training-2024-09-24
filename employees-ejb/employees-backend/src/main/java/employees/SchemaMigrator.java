@@ -1,11 +1,11 @@
 package employees;
 
+import jakarta.annotation.PostConstruct;
 import jakarta.annotation.Resource;
+import jakarta.ejb.Singleton;
+import jakarta.ejb.Startup;
 import jakarta.ejb.TransactionManagement;
 import jakarta.ejb.TransactionManagementType;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.enterprise.event.Observes;
-import jakarta.enterprise.event.Startup;
 import liquibase.Contexts;
 import liquibase.Liquibase;
 import liquibase.database.DatabaseFactory;
@@ -17,15 +17,17 @@ import lombok.extern.slf4j.Slf4j;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 
-@ApplicationScoped
+@Singleton
 @Slf4j
 @TransactionManagement(TransactionManagementType.BEAN)
+@Startup
 public class SchemaMigrator {
 
     @Resource(mappedName = "java:/jdbc/EmployeeDS")
     private DataSource dataSource;
 
-    public void migrate(@Observes Startup startup) {
+    @PostConstruct
+    public void migrate() {
         log.info("Schema migration started");
         try (var connection = dataSource.getConnection()) {
             var database = DatabaseFactory.getInstance().findCorrectDatabaseImplementation(new JdbcConnection(connection));

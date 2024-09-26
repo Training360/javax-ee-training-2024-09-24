@@ -1,6 +1,6 @@
 package employees;
 
-import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceContext;
@@ -9,7 +9,7 @@ import jakarta.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-@ApplicationScoped
+@Stateless
 public class EmployeesDao {
 
     @PersistenceContext
@@ -43,7 +43,6 @@ public class EmployeesDao {
             .orElseThrow(() -> new NotFoundException("Employee with id " + id + " not found"));
     }
 
-    @Transactional
     public Employee create(Employee employee) {
         em.persist(employee);
         return employee;

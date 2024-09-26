@@ -1,23 +1,23 @@
 package employees;
 
-import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.ejb.EJB;
+import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
-import java.util.Optional;
 
-@ApplicationScoped
+@Stateless
 public class EmployeesService {
 
     private static Logger log = LoggerFactory.getLogger(EmployeesService.class);
 
-    @Inject
+    @EJB
     private EmployeesDao employeesDao;
 
-    @Inject
+    @EJB
     private LogEntryDao logEntryDao;
 
     @Inject
@@ -34,8 +34,8 @@ public class EmployeesService {
         return employeeMapper.toEmployeeDto(employee);
     }
 
-    @Transactional
     public EmployeeDto create(EmployeeDto employee) {
+        log.info("Without @Transactional annotation");
         employeesDao.findEmployeeByName(employee.name()).ifPresent(
                 e -> {throw new IllegalArgumentException("Employee already exists with id: " + e.getId());}
         );

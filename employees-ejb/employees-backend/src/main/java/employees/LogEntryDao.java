@@ -1,11 +1,11 @@
 package employees;
 
-import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 
-@ApplicationScoped
+@Stateless
 public class LogEntryDao {
 
     @PersistenceContext
