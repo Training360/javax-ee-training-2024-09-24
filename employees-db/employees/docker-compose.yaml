@@ -1,0 +1,32 @@
+services:
+  # docker run -d -e POSTGRES_DB=employees -e POSTGRES_USER=employees
+  # -e POSTGRES_PASSWORD=employees  -p 5432:5432  --name employees-postgres postgres
+  postgres:
+    image: postgres
+    container_name: foo
+    environment:
+      POSTGRES_DB: employees
+      POSTGRES_USER: employees
+      POSTGRES_PASSWORD: employees
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "sh -c 'pg_isready -U employees -d employees'" ]
+      interval: 3s
+      timeout: 2s
+      retries: 10
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
+  employees:
+    image: employees-db
+    container_name: bar
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DB_CONNECTION_URL: jdbc:postgresql://postgres:5432/employees
+      DB_USERNAME: employees
+      DB_PASSWORD: employees
+    ports:
+      - "8081:8080"
