@@ -44,8 +44,8 @@ public class EmployeesService {
 
         var entity = employeeMapper.toEmployee(employee);
         var result = employeesDao.create(entity);
-//        return employeeMapper.toEmployeeDto(result);
-        throw new IllegalArgumentException("Testing transaction");
+        return employeeMapper.toEmployeeDto(result);
+//        throw new IllegalArgumentException("Testing transaction");
     }
 
     public EmployeeDto update(EmployeeDto employee) {
