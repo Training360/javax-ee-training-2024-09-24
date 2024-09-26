@@ -1,0 +1,9 @@
+plugins {
+    id 'java'
+}
+
+apply from: rootProject.file('buildSrc/shared.gradle')
+
+dependencies {
+    implementation libs.liquibase.core
+}

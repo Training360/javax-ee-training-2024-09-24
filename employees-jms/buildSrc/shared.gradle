@@ -1,0 +1,27 @@
+group = 'training'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly libs.jakarta.jakartaee.api
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+    compileOnly libs.mapstruct
+    annotationProcessor libs.mapstruct.processor
+    compileOnly libs.slf4j.api
+    implementation libs.openapi.api
+
+    testImplementation libs.mockito
+    testImplementation libs.assertj
+}
+
+testing {
+    suites {
+        test {
+            useJUnitJupiter()
+        }
+    }
+}

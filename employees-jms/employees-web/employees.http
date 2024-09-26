@@ -1,0 +1,61 @@
+### Get OpenAPI document
+GET http://localhost:8080/openapi
+#Accept: application/json
+
+### List employees
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
+
+### List employees with header
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
+RequestId: {{$uuid}}
+
+### List employees with filter
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees?name-prefix=john
+
+### List employees with maxResult
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees?max-result=1
+
+### List employees with maxResult
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees?name-prefix=john&max-result=2
+
+### Find employee
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/1
+
+### Not found
+GET http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/666
+
+### Create employee
+POST http://localhost:8081/employees-web-1.0-SNAPSHOT/api/employees
+Content-Type: application/json
+
+{
+  "name": "John Doe {{$uuid}}"
+}
+
+### Validation error
+POST http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
+Content-Type: application/json
+
+{
+  "name": ""
+}
+
+### Lowercased name
+POST http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees
+Content-Type: application/json
+
+{
+  "name": "john doe"
+}
+
+### Update employee
+PUT http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Jack Doe"
+}
+
+### Delete
+DELETE http://localhost:8080/employees-web-1.0-SNAPSHOT/api/employees/1
