@@ -1,4 +1,6 @@
-# Adatbázis kapcsolódás
+# Employees alkalmazás
+
+## Adatbázis kapcsolódás
 
 * Adatbázis indítása Docker konténerként
 
@@ -39,3 +41,11 @@ data-source add --name=EmployeeDS --jndi-name=java:/jdbc/EmployeeDS \
 ```sql
 insert into employees(id, emp_name) values (nextval('employees_seq'), 'Jack Doe');
 ```
+
+## OpenAPI
+
+```
+/extension=org.wildfly.extension.microprofile.openapi-smallrye:add()
+/subsystem=microprofile-openapi-smallrye:add()
+```
+

@@ -7,6 +7,8 @@ assertj = "3.26.3"
 rest-assured = "5.5.0"
 jackson = "2.17.2"
 slf4j = "2.0.16"
+openapi-api = "4.0.1"
+openapi-ui = "2.0.0"
 
 [libraries]
 jakarta-jakartaee-api = {module = "jakarta.platform:jakarta.jakartaee-api", version.ref = "jakarta-jakartaee-api"}
@@ -18,3 +20,5 @@ assertj = {module = "org.assertj:assertj-core", version.ref = "assertj"}
 rest-assured = {module = "io.rest-assured:rest-assured", version.ref = "rest-assured"}
 jackson-databind = {module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson"}
 slf4j-api = {module = "org.slf4j:slf4j-api", version.ref = "slf4j"}
+openapi-api = {module = "org.eclipse.microprofile.openapi:microprofile-openapi-api", version.ref = "openapi-api"}
+openapi-ui = {module = "org.microprofile-ext.openapi-ext:openapi-ui", version.ref = "openapi-ui"}
