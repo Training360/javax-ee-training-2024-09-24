@@ -52,3 +52,23 @@ insert into employees(id, emp_name) values (nextval('employees_seq'), 'Jack Doe'
 Swagger UI elérhető:
 
 http://localhost:8080/employees-web-1.0-SNAPSHOT/api/openapi-ui
+
+## Docker
+
+* `Dockerfile` létrehozása, tartalom átmásolása
+* `customization` könyvtár átmásolása, benne a két fájllal
+* Build
+
+```shell
+docker build -t employees-db .
+```
+
+* Futtatás
+
+```shell
+docker run -d -p 8080:8080 --name my-employees-db employees-db
+```
+
+Ennek eredménye, hogy nem talál adatbázist a Liquibase:
+
+`java.net.ConnectException: Connection refused`
