@@ -49,3 +49,6 @@ insert into employees(id, emp_name) values (nextval('employees_seq'), 'Jack Doe'
 /subsystem=microprofile-openapi-smallrye:add()
 ```
 
+Swagger UI elérhető:
+
+http://localhost:8080/employees-web-1.0-SNAPSHOT/api/openapi-ui
