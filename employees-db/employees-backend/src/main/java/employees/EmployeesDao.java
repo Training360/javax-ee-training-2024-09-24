@@ -49,7 +49,7 @@ public class EmployeesDao {
         return employee;
     }
 
-    @Transactional
+    @Transactional(Transactional.TxType.REQUIRED)
     public Employee update(Employee employee) {
         var original = findById(employee.getId());
         original.setName(employee.getName());
