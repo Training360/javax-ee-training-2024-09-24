@@ -9,7 +9,7 @@
         <properties>
             <property
                     name="jakarta.persistence.schema-generation.database.action"
-                    value="create" />
+                    value="none" />
             <property name="hibernate.show_sql" value="true" />
         </properties>
     </persistence-unit>

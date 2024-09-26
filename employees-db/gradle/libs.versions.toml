@@ -9,6 +9,7 @@ jackson = "2.17.2"
 slf4j = "2.0.16"
 openapi-api = "4.0.1"
 openapi-ui = "2.0.0"
+liquibase = "4.27.0"
 
 [libraries]
 jakarta-jakartaee-api = {module = "jakarta.platform:jakarta.jakartaee-api", version.ref = "jakarta-jakartaee-api"}
@@ -22,3 +23,4 @@ jackson-databind = {module = "com.fasterxml.jackson.core:jackson-databind", vers
 slf4j-api = {module = "org.slf4j:slf4j-api", version.ref = "slf4j"}
 openapi-api = {module = "org.eclipse.microprofile.openapi:microprofile-openapi-api", version.ref = "openapi-api"}
 openapi-ui = {module = "org.microprofile-ext.openapi-ext:openapi-ui", version.ref = "openapi-ui"}
+liquibase-core = {module = "org.liquibase:liquibase-core", version.ref = "liquibase"}
